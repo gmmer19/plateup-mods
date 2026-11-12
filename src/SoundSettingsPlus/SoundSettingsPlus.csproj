@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>SoundSettingsPlus</AssemblyName>
+    <RootNamespace>PlateUpMods.SoundSettingsPlus</RootNamespace>
+  </PropertyGroup>
+</Project>

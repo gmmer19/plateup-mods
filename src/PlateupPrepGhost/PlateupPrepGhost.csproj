@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>PlateupPrepGhost</AssemblyName>
+    <RootNamespace>PlateUpMods.PlateupPrepGhost</RootNamespace>
+  </PropertyGroup>
+</Project>

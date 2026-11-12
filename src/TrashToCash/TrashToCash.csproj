@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>TrashToCash</AssemblyName>
+    <RootNamespace>PlateUpMods.TrashToCash</RootNamespace>
+  </PropertyGroup>
+</Project>

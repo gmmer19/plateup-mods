@@ -1,0 +1,55 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <GameDir>$(MSBuildThisFileDirectory)..\</GameDir>
+    <ManagedDir>$(GameDir)PlateUp_Data\Managed\</ManagedDir>
+    <ModsDir>$(GameDir)Mods\</ModsDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(MSBuildThisFileDirectory)lib\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="KitchenMods"><HintPath>$(ManagedDir)KitchenMods.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Kitchen.Common"><HintPath>$(ManagedDir)Kitchen.Common.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Kitchen.GameData"><HintPath>$(ManagedDir)Kitchen.GameData.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Kitchen.Layouts"><HintPath>$(ManagedDir)Kitchen.Layouts.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="KitchenMode"><HintPath>$(ManagedDir)KitchenMode.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Kitchen.RestaurantMode"><HintPath>$(ManagedDir)Kitchen.RestaurantMode.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Kitchen.FranchiseMode"><HintPath>$(ManagedDir)Kitchen.FranchiseMode.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Kitchen.Networking"><HintPath>$(ManagedDir)Kitchen.Networking.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Kitchen.Persistence"><HintPath>$(ManagedDir)Kitchen.Persistence.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PlatformSettings"><HintPath>$(ManagedDir)PlatformSettings.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Controllers"><HintPath>$(ManagedDir)Controllers.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(ManagedDir)Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ManagedDir)UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(ManagedDir)UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(ManagedDir)Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(ManagedDir)UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(ManagedDir)UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ManagedDir)UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(ManagedDir)UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Entities"><HintPath>$(ManagedDir)Unity.Entities.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Collections"><HintPath>$(ManagedDir)Unity.Collections.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Mathematics"><HintPath>$(ManagedDir)Unity.Mathematics.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Burst"><HintPath>$(ManagedDir)Unity.Burst.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MessagePack"><HintPath>$(ManagedDir)MessagePack.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MessagePack.Annotations"><HintPath>$(ManagedDir)MessagePack.Annotations.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Sirenix.Serialization"><HintPath>$(ManagedDir)Sirenix.Serialization.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Sirenix.Utilities"><HintPath>$(ManagedDir)Sirenix.Utilities.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes"><HintPath>$(ManagedDir)Sirenix.OdinInspector.Attributes.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(ManagedDir)Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ShapesRuntime"><HintPath>$(ManagedDir)ShapesRuntime.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+# Whitelist mode: the game folder holds the full game (1.3 GB of engine
+# data and binaries that must not be published), so everything is ignored
+# by default and only the mod project files are re-included.
+/*
+
+# Project files
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/LICENSE
+!/Mods.txt
+!/Install-Mods.ps1
+!/src/
+
+# Build artifacts inside src/
+/src/*/bin/
+/src/*/obj/
+
+# Local-only notes
+CONTEXT.md

@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>StartingMealSelector</AssemblyName>
+    <RootNamespace>PlateUpMods.StartingMealSelector</RootNamespace>
+  </PropertyGroup>
+</Project>

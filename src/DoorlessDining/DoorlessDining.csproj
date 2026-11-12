@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>DoorlessDining</AssemblyName>
+    <RootNamespace>PlateUpMods.DoorlessDining</RootNamespace>
+  </PropertyGroup>
+</Project>

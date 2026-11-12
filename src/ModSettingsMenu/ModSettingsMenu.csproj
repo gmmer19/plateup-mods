@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>ModSettingsMenu</AssemblyName>
+    <RootNamespace>PlateUpMods.ModSettingsMenu</RootNamespace>
+  </PropertyGroup>
+</Project>

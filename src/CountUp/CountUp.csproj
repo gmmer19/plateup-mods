@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>CountUp</AssemblyName>
+    <RootNamespace>PlateUpMods.CountUp</RootNamespace>
+  </PropertyGroup>
+</Project>

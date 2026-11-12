@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>HassleFreeShop</AssemblyName>
+    <RootNamespace>PlateUpMods.HassleFreeShop</RootNamespace>
+  </PropertyGroup>
+</Project>

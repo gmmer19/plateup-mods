@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Overstocked</AssemblyName>
+    <RootNamespace>PlateUpMods.Overstocked</RootNamespace>
+  </PropertyGroup>
+</Project>
