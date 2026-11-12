@@ -38,6 +38,11 @@ namespace PlateUpMods.StartingMealSelector
         public void PostInject()
         {
         }
+
+        public static string L(string english, string russian)
+        {
+            return Localisation.CurrentLocale == Locale.Russian ? russian : english;
+        }
     }
 
     internal static class Settings
@@ -110,7 +115,7 @@ namespace PlateUpMods.StartingMealSelector
             Names.Clear();
 
             Values.Add(0);
-            Names.Add("Не менять (как в игре)");
+            Names.Add(StartingMealSelectorMod.L("Leave unchanged (use the game default)", "Не менять (как в игре)"));
 
             var found = new Dictionary<int, string>();
             CollectFromEntities(found);
@@ -283,12 +288,12 @@ namespace PlateUpMods.StartingMealSelector
             _selected = DishCatalog.Values[currentIndex];
             Debug.Log("[StartingMealSelector] menu opened, dishes=" + (DishCatalog.Values.Count - 1) + ", selected=" + _selected);
 
-            AddLabel("Стартовое блюдо");
-            AddInfo("Выбери блюдо, с которым начнётся ресторан. В списке только открытые блюда.");
+            AddLabel(StartingMealSelectorMod.L("Starting Dish", "Стартовое блюдо"));
+            AddInfo(StartingMealSelectorMod.L("Choose the dish for this restaurant. Only unlocked dishes are listed.", "Выбери блюдо, с которым начнётся ресторан. В списке только открытые блюда."));
 
             if (DishCatalog.Values.Count <= 1)
             {
-                AddInfo("Список блюд пуст. Зайди в лобби и открой меню ещё раз.");
+                AddInfo(StartingMealSelectorMod.L("No dishes are available. Enter the lobby and open this menu again.", "Список блюд пуст. Зайди в лобби и открой меню ещё раз."));
             }
             else
             {
@@ -300,13 +305,13 @@ namespace PlateUpMods.StartingMealSelector
                     };
             }
 
-            _applyButton = AddButton("Применить к лобби", delegate
+            _applyButton = AddButton(StartingMealSelectorMod.L("Apply to Lobby", "Применить к лобби"), delegate
             {
                 ApplySelection();
                 RequestPreviousMenu();
             });
 
-            AddButton("Случайное из открытых", delegate
+            AddButton(StartingMealSelectorMod.L("Random Unlocked Dish", "Случайное из открытых"), delegate
             {
                 if (DishCatalog.Values.Count <= 1)
                 {
@@ -320,7 +325,7 @@ namespace PlateUpMods.StartingMealSelector
 
             New<SpacerElement>();
 
-            _saveButton = AddButton("Всегда начинать с этого блюда", delegate
+            _saveButton = AddButton(StartingMealSelectorMod.L("Always Start with This Dish", "Всегда начинать с этого блюда"), delegate
             {
                 if (!DishCatalog.IsValidDish(_selected))
                 {
@@ -332,7 +337,7 @@ namespace PlateUpMods.StartingMealSelector
                 UpdateButtons();
             });
 
-            AddButton("Сбросить автоматический выбор", delegate
+            AddButton(StartingMealSelectorMod.L("Reset Automatic Selection", "Сбросить автоматический выбор"), delegate
             {
                 Settings.SetInt(StartingMealSelectorMod.StartWithMeal, 0);
                 UpdateButtons();
@@ -375,14 +380,14 @@ namespace PlateUpMods.StartingMealSelector
             int saved = Settings.GetInt(StartingMealSelectorMod.StartWithMeal, 0);
             if (saved == 0)
             {
-                _savedInfo.SetLabel("Автоматический выбор блюда выключен.");
+                _savedInfo.SetLabel(StartingMealSelectorMod.L("Automatic dish selection is off.", "Автоматический выбор блюда выключен."));
                 return;
             }
 
             string name = DishCatalog.NameOf(saved);
             _savedInfo.SetLabel(name != null
-                ? "При загрузке лобби будет выбрано: " + name
-                : "Сохранённое блюдо сейчас недоступно.");
+                ? StartingMealSelectorMod.L("The lobby will start with: ", "При загрузке лобби будет выбрано: ") + name
+                : StartingMealSelectorMod.L("The saved dish is currently unavailable.", "Сохранённое блюдо сейчас недоступно."));
         }
     }
 
@@ -530,7 +535,7 @@ namespace PlateUpMods.StartingMealSelector
 
                 addSubmenu.Invoke(__instance, new object[]
                 {
-                    "Стартовое блюдо",
+                    StartingMealSelectorMod.L("Starting Dish", "Стартовое блюдо"),
                     typeof(StartingMealSelectorMenu),
                     false
                 });

@@ -604,19 +604,19 @@ namespace PlateUpMods.CleaningBonus
             for (int i = 0; i <= 20; i++)
             {
                 PercentValues.Add(i);
-                PercentNames.Add(i == 0 ? "Выкл." : i + "%");
+                PercentNames.Add(i == 0 ? L("Off", "Выкл.") : i + "%");
             }
 
             for (int i = 0; i <= 15; i++)
             {
                 SecondValues.Add(i);
-                SecondNames.Add(i == 0 ? "Выкл." : i + " сек");
+                SecondNames.Add(i == 0 ? L("Off", "Выкл.") : i + L(" s", " сек"));
             }
 
             for (int i = 20; i <= 60; i += 5)
             {
                 SecondValues.Add(i);
-                SecondNames.Add(i + " сек");
+                SecondNames.Add(i + L(" s", " сек"));
             }
         }
 
@@ -629,31 +629,31 @@ namespace PlateUpMods.CleaningBonus
         {
             Settings.EnsureRegistered();
 
-            AddLabel("Бонус за чистоту");
-            AddInfo("В конце дня начисляется процент от дневного заработка, если соответствующая уборка выполнена.");
+            AddLabel(L("Cleanliness Bonus", "Бонус за чистоту"));
+            AddInfo(L("At the end of each day, earn a percentage of that day's revenue for completing the corresponding cleaning task.", "В конце дня начисляется процент от дневного заработка, если соответствующая уборка выполнена."));
 
-            AddLabel("Чистая посуда");
+            AddLabel(L("Clean Dishes", "Чистая посуда"));
             Add(new Option<int>(PercentValues, Settings.GetInt(CleaningBonusMod.DishPercent, 8), PercentNames))
                 .OnChanged += delegate (object _, int value)
                 {
                     Preferences.Set(CleaningBonusMod.DishPercent, value);
                 };
 
-            AddLabel("Чистый пол");
+            AddLabel(L("Clean Floors", "Чистый пол"));
             Add(new Option<int>(PercentValues, Settings.GetInt(CleaningBonusMod.FloorPercent, 8), PercentNames))
                 .OnChanged += delegate (object _, int value)
                 {
                     Preferences.Set(CleaningBonusMod.FloorPercent, value);
                 };
 
-            AddLabel("Вынесенный мусор");
+            AddLabel(L("Trash Emptied", "Вынесенный мусор"));
             Add(new Option<int>(PercentValues, Settings.GetInt(CleaningBonusMod.TrashPercent, 4), PercentNames))
                 .OnChanged += delegate (object _, int value)
                 {
                     Preferences.Set(CleaningBonusMod.TrashPercent, value);
                 };
 
-            AddLabel("Доп. время на уборку");
+            AddLabel(L("Extra Cleaning Time", "Доп. время на уборку"));
             Add(new Option<int>(SecondValues, Settings.GetInt(CleaningBonusMod.BonusSeconds, 7), SecondNames))
                 .OnChanged += delegate (object _, int value)
                 {
@@ -662,6 +662,11 @@ namespace PlateUpMods.CleaningBonus
 
             New<SpacerElement>();
             AddButton(Localisation["MENU_BACK_SETTINGS"], delegate { RequestPreviousMenu(); });
+        }
+
+        private static string L(string english, string russian)
+        {
+            return Localisation.CurrentLocale == Locale.Russian ? russian : english;
         }
     }
 
